@@ -1,0 +1,170 @@
+/* GENEL */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+}
+
+/* HEADER */
+.header {
+  background: rgb(73, 16, 16);
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(180, 0, 0, 0.6);
+}
+
+/* LOGO VE IŞIMA EFEKTİ */
+.logo img {
+  width: 250px;
+  height: auto;
+  transition: filter 0.4s ease, transform 0.4s ease; /* Yumuşak geçiş */
+}
+
+.logo:hover img {
+  /* Beyaz/Kırmızı karışımı bir parlama efekti */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 12px rgba(180, 0, 0, 0.4));
+  transform: scale(1.02); /* Çok hafif büyüme */
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: all 0.4s ease; /* Fade efekti için geçiş süresi */
+}
+
+/* NAV BUTON IŞIMA EFEKTİ */
+.nav a:hover {
+  opacity: 1;
+  color: #fff;
+  /* Yazının etrafında hafif beyaz ışıma */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(180, 0, 0, 0.5);
+}
+
+.nav .active { 
+  opacity: 1; 
+  font-weight: 700;
+  /* Aktif olan butonda da hafif bir ışıma kalabilir */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.nav .disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* HERO ARKA PLAN */
+.hero {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    linear-gradient(rgba(180, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url("https://csokanaltiparmakanadolulisesi.meb.k12.tr/meb_iys_dosyalar/34/22/876795/resimler/2019_12/k_04102052_19150752_5.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+}
+
+/* TOMBUL VE DAR KART */
+.glass-card {
+  background: rgba(20, 20, 20, 0.9);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  width: 100% !important;
+  max-width: 420px !important; 
+  
+  padding: 50px 40px !important;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+  
+  color: #fff;
+  text-align: center;
+  margin: 0 auto !important;
+
+  animation: fadeUp 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+/* YAZI STİLLERİ */
+.section-block h1, .section-block h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-block h2 {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.section-block p {
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #cccccc;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 30px auto;
+  width: 50%;
+}
+
+/* LİNK BUTONU */
+.btn-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #b30000;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.btn-link:hover {
+  background: #ff0000;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* Butona da ışıma ekledik */
+}
+
+/* ANIMASYON TANIMI */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBİL AYARI */
+@media (max-width: 500px) {
+  .header { padding: 15px 20px; }
+  .logo img { width: 180px; }
+  .glass-card {
+    padding: 35px 25px !important;
+    max-width: 90% !important;
+  }
+}
